@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Fila personalizada del listView-->
+<!--Aqui se usaran cardviews asi que se agregara la libreria cardview en build.gradle(Module:app)-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="3dp"
+    app:cardCornerRadius="3dp"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="end|bottom"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/titleNT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Title"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/descNT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_of_the_note"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primaryDarkColor"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/deleteBtn"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_delete_foreground" />
+
+            <ImageButton
+                android:id="@+id/editBtn"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_edit_foreground" />
+
+            <ImageButton
+                android:id="@+id/copyBtn"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_copy_foreground" />
+
+            <ImageButton
+                android:id="@+id/shareBtn"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_share_foreground" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

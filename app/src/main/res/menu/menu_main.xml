@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings"
+        android:title="settings"/>
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_foreground"
+        app:showAsAction="always"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        />
+    <item
+        android:id="@+id/addNote"
+        android:title="Add Note"
+        android:icon="@drawable/ic_add_foreground"
+        app:showAsAction="always"/>
+</menu>
