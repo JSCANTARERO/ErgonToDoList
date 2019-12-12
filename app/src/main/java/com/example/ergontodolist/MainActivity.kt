@@ -1,5 +1,6 @@
 package com.example.ergontodolist
 
+import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.ClipboardManager
 import android.content.Context
@@ -77,12 +78,12 @@ class MainActivity : AppCompatActivity() {
         sv.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             //Generamos los metodos onQueryTextSubmit y onQueryTextChange
             override fun onQueryTextSubmit(query: String?): Boolean {
-                loadQuery("%"+query+"%")
+                loadQuery("%$query%")
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                loadQuery("%"+newText+"%")
+                loadQuery("%$newText%")
                 return false
             }
         })
@@ -103,17 +104,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Suppress("DEPRECATION")
-    inner class ErgonNotesAdapter: BaseAdapter{
+    inner class ErgonNotesAdapter(context: Context, var listNotesAdapter: ArrayList<Note>) :
+        BaseAdapter() {
 
-        var listNotesAdapter = ArrayList<Note>()
-        var context:Context?=null
-
-        constructor(context: Context, listNotesAdapter: ArrayList<Note>) : super() {
-            this.listNotesAdapter = listNotesAdapter
-            this.context = context
-        }
+        var context:Context?= context
 
 
+        @SuppressLint("ViewHolder", "InflateParams")
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             //inflate layout wor.xml
             val myView = layoutInflater.inflate(R.layout.row, null)

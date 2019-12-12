@@ -12,12 +12,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".AddNoteActivity"
-            android:label="Add Note"
-            android:parentActivityName=".MainActivity"
-            tools:targetApi="jelly_bean"/>
-        <activity
             android:name=".MainActivity"
+            android:label="Add Note"
+            android:parentActivityName=".AddNoteActivity"/>
+        <activity
+            android:name=".AddNoteActivity"
             android:label="Notes List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
